@@ -9,8 +9,10 @@ RUN wget https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaage
     -O /app/jmx_prometheus_javaagent.jar
 
 #Artifacts from Gradle
-COPY build/libs/spring-petclinic-*.jar /app/petclinic.jar
+COPY build/libs/spring-petclinic-*.jar /app/spring-petclinic.jar
 
 EXPOSE 8080
+EXPOSE 7777
 
-CMD ["java", "-javaagent:/app/jmx_prometheus_javaagent.jar=8080:/app/jmx_exporter_config.yaml", "-jar", "/app/spring-petclinic.jar"]
+CMD ["java", "-javaagent:/app/jmx_prometheus_javaagent.jar=7777:/app/jmx_exporter_config.yaml", "-jar", "/app/spring-petclinic.jar"]
+
