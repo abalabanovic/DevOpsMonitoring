@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - my-network
+    volumes:
+      - /etc/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: always
+
+  petclinic:
+    image: pet-clinic-monitor
+    ports:
+      - "8080:8080"
+      - "7777:7777"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
