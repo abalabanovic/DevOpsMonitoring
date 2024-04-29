@@ -1,0 +1,6 @@
+---
+startDelaySeconds: 0
+ssl: false
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+whitelistObjectNames: ["java.lang:type=Memory","java.lang:type=OperatingSystem","java.lang:type=Runtime","java.lang:type=GarbageCollector,*"]
