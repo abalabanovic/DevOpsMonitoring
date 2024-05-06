@@ -15,4 +15,4 @@ scrape_configs:
         - localhost
         labels:
           job: spring-boot
-          __path__: /path/to/app.log
+          __path__: /home/osboxes/DevOpsMonitoring/spring-petclinic.log
